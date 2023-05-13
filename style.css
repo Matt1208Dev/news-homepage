@@ -1,0 +1,62 @@
+/* Reset CSS */
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* Layout */
+    --min-width-layout: 23.4375rem; /* 375px */
+    --max-width-layout: 90rem; /* 1440px */
+
+    /* Colors - Primary */
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+
+    /* Colors - Neutral */
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+
+    /* Font Weights */
+    --fw-regular: 400;
+    --fw-bold: 700;
+    --fw-bolder: 800;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'inter-reg';
+    src: url(./assets/fonts/static/Inter-Regular.ttf);
+    font-weight: var(--fw-regular);
+}
+@font-face {
+    font-family: 'inter-bold';
+    src: url(./assets/fonts/static/Inter-Bold.ttf);
+    font-weight: var(--fw-bold);
+}
+@font-face {
+    font-family: 'inter-bolder';
+    src: url(./assets/fonts/static/Inter-ExtraBold.ttf);
+    font-weight: var(--fw-bolder);
+}
+
+body {
+    min-inline-size: var(--min-width-layout);
+    max-inline-size: var(--max-width-layout);
+    min-block-size: 100vh;
+    margin-inline: auto;
+}
+
+p {
+    font-family: 'inter-reg', sans-serif;
+    font-size: 0.9375rem; /* 15px */
+}
+
+
+
+/* Attributions */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
