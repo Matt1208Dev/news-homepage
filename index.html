@@ -1,58 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="style.css" />
+
+        <title>News homepage</title>
+    </head>
+    <body>
+        <!-- Surcouche menu mobile -->
+        <div class="menu-overlay"></div>
+        <!-- NAVBAR -->
+        <nav class="navbar container">
+            <!-- Logo entreprise -->
+            <div class="logo-box">
+                <img
+                src="./assets/images/logo.svg"
+                alt='Un "w" majuscule et un point, logo du site'
+                />
+            </div>
+            <!-- Groupe de liens -->
+            <div class="nav-group">
+                <!-- Bouton close du menu mobile -->
+                <svg class="btn-close" width="32" height="31" xmlns="http://www.w3.org/2000/svg"><g fill="#00001A" fill-rule="evenodd"><path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z"/><path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z"/></g></svg>
+                <!-- Liens -->
+                <a href="#" class="navlink">Home</a>
+                <a href="#" class="navlink">New</a>
+                <a href="#" class="navlink">Popular</a>
+                <a href="#" class="navlink">Trending</a>
+                <a href="#" class="navlink">Categories</a>
+            </div>
+            <!-- Bouton menu mobile -->
+            <svg class="btn-menu" width="40" height="17" xmlns="http://www.w3.org/2000/svg"><g fill="#00001A" fill-rule="evenodd"><path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z"/><path d="M0 0h40v3H0z"/></g></svg>
+        </nav>
+
+        <main class="container">
+          <h1>The Bright Future of Web 3.0?</h1>
+
+          We dive into the next evolution of the web that claims to put the power
+          of the platforms back into the hands of the people. But is it really
+          fulfilling its promise?
   
-  <title>News homepage</title>
-
-</head>
-<body>
-
-    Home
-    New
-    Popular
-    Trending
-    Categories
-
-  The Bright Future of Web 3.0?
-
-  We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-  But is it really fulfilling its promise?
-
-  Read more
-
-  New 
-
-  Hydrogen VS Electric Cars
-  Will hydrogen-fueled cars ever catch up to EVs?
-
-  The Downsides of AI Artistry
-  What are the possible adverse effects of on-demand AI image generation?
-
-  Is VC Funding Drying Up?
-  Private funding by VC firms is down 50% YOY. We take a look at what that means.
-
-  01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
-
-  02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
-
-  03
-  The Growth of Gaming
-  How the pandemic has sparked fresh opportunities.
+          <button>Read more</button>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+          <h2>New</h2>
+  
+          <h3>
+              <a href="#"> Hydrogen VS Electric Cars </a>
+          </h3>
+          Will hydrogen-fueled cars ever catch up to EVs? The Downsides of AI
+          Artistry What are the possible adverse effects of on-demand AI image
+          generation? Is VC Funding Drying Up? Private funding by VC firms is down
+          50% YOY. We take a look at what that means. 01
+          <h4>Reviving Retro PCs</h4>
+          What happens when old PCs are given modern upgrades? 02 Top 10 Laptops
+          of 2022 Our best picks for various needs and budgets. 03 The Growth of
+          Gaming How the pandemic has sparked fresh opportunities.
+        </main>
 
-  <script src="./script.js"></script>
-</body>
+
+        <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="#">Your Name Here</a>.
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
 </html>

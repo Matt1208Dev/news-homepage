@@ -1,5 +1,7 @@
 /* Reset CSS */
-*, ::before, ::after {
+*,
+::before,
+::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -8,6 +10,7 @@
 html {
     /* Layout */
     --min-width-layout: 23.4375rem; /* 375px */
+    --max-width-content: 68.75rem; /* 1100px */
     --max-width-layout: 90rem; /* 1440px */
 
     /* Colors - Primary */
@@ -28,21 +31,22 @@ html {
 
 /* Fonts */
 @font-face {
-    font-family: 'inter-reg';
+    font-family: "inter-reg";
     src: url(./assets/fonts/static/Inter-Regular.ttf);
     font-weight: var(--fw-regular);
 }
 @font-face {
-    font-family: 'inter-bold';
+    font-family: "inter-bold";
     src: url(./assets/fonts/static/Inter-Bold.ttf);
     font-weight: var(--fw-bold);
 }
 @font-face {
-    font-family: 'inter-bolder';
+    font-family: "inter-bolder";
     src: url(./assets/fonts/static/Inter-ExtraBold.ttf);
     font-weight: var(--fw-bolder);
 }
 
+/* Elements */
 body {
     min-inline-size: var(--min-width-layout);
     max-inline-size: var(--max-width-layout);
@@ -50,13 +54,153 @@ body {
     margin-inline: auto;
 }
 
+h1 {
+    font-family: "inter-bold", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem); /* 32px / 56px */
+}
+
+h2,
+h3,
+h4 {
+    font-family: "inter-bold", sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem; /* 40px */
+}
+
+h3 {
+    font-size: 1.25rem; /* 20px */
+}
+
+h4 {
+    font-size: 1.125rem; /* 18px */
+}
+
 p {
-    font-family: 'inter-reg', sans-serif;
+    font-family: "inter-reg", sans-serif;
     font-size: 0.9375rem; /* 15px */
 }
 
+a {
+    text-decoration: none;
+}
 
+button {
+    font-family: "inter-bold", sans-serif;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    inline-size: 100%;
+}
+
+/*****  Layout  *****/
+.container {
+    max-inline-size: var(--max-width-content);
+    margin-inline: auto;
+}
+
+/*****  Classes  *****/
+
+.navbar {
+    position: relative;
+    block-size: clamp(5.5rem, 15vw, 10rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: clip;
+}
+
+.logo-box {
+    inline-size: clamp(45px, 10vw, 65px);
+}
+
+.navlink {
+    font-family: "inter-reg";
+    color: var(--dark-grayish-blue);
+    margin-inline-start: 2rem;
+    margin-block: 1rem;
+    transition: color 0.2s ease-out;
+}
+
+.navlink:hover {
+    color: var(--soft-red);
+}
+
+.btn-menu,
+.btn-close {
+    display: none;
+}
+
+svg.btn-menu,
+svg.btn-close {
+    cursor: pointer;
+}
+
+@media screen and (width <= 768px) {
+
+    .menu-overlay.active {
+        position: absolute;
+        inset: 0;
+        z-index: 100;
+        background-color: rgba(0 0 0 / 0.5);
+    }
+    .btn-menu {
+        display: block;
+    }
+
+    .nav-group {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        block-size: 100vh;
+        padding-top: 8rem;
+        inline-size: 16rem;
+        background-color: var(--off-white);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-out;
+    }
+
+    .nav-group.active {
+        transform: translateX(0);
+    }
+
+    .navlink {
+        color: var(--very-dark-blue);
+    }
+
+    .btn-close {
+        position: absolute;
+        top: clamp(1.5rem, 4vw, 3rem);
+        right: 1rem;
+    }
+}
+
+@media screen and (width > 768px) {
+    .btn-menu {
+        display: none;
+    }
+}
+
+@media screen and (width < 1024px) {
+    .navbar {
+        padding-inline: 1rem;
+    }
+}
 
 /* Attributions */
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
