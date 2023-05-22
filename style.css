@@ -54,19 +54,26 @@ body {
     margin-inline: auto;
 }
 
+h1,
+h3 {
+    line-height: 1;
+    margin-block-end: 1rem;
+}
+
 h1 {
     font-family: "inter-bold", sans-serif;
     font-size: clamp(2rem, 4vw, 3.5rem); /* 32px / 56px */
 }
 
-h2,
+h2 {
+    font-family: "Inter-reg", sans-serif;
+    line-height: 1;
+    font-size: 2.5rem; /* 40px */
+}
+
 h3,
 h4 {
     font-family: "inter-bold", sans-serif;
-}
-
-h2 {
-    font-size: 2.5rem; /* 40px */
 }
 
 h3 {
@@ -80,6 +87,7 @@ h4 {
 p {
     font-family: "inter-reg", sans-serif;
     font-size: 0.9375rem; /* 15px */
+    color: var(--dark-grayish-blue);
 }
 
 a {
@@ -89,8 +97,10 @@ a {
 button {
     font-family: "inter-bold", sans-serif;
     text-transform: uppercase;
+    letter-spacing: 0.25rem;
     border: none;
     cursor: pointer;
+    margin-block-start: 2rem;
 }
 
 img {
@@ -104,8 +114,13 @@ img {
     margin-inline: auto;
 }
 
-/*****  Classes  *****/
+.grid {
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 18.75rem 13.125rem 13.125rem; 300px 210px 210px */
+}
 
+/*****  Classes  *****/
 .navbar {
     position: relative;
     block-size: clamp(5.5rem, 15vw, 10rem);
@@ -141,8 +156,109 @@ svg.btn-close {
     cursor: pointer;
 }
 
-@media screen and (width <= 768px) {
+.featured-article-txt {
+    min-height: 16rem;
+}
 
+.btn-read-more {
+    position: relative;
+    z-index: 0;
+    background-color: var(--soft-red);
+    color: var(--off-white);
+    font-size: 0.9rem;
+    padding: 1rem 2rem;
+}
+
+.btn-read-more::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--very-dark-blue);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.25s ease-out;
+}
+
+.btn-read-more:hover:before {
+    transform: scaleX(1);
+}
+
+/* Section New articles */
+.aside-new-articles {
+    padding: 2rem 1.5rem;
+    background-color: var(--very-dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.aside-new-articles h2 {
+    color: var(--soft-orange);
+}
+
+.aside-new-articles a {
+    color: var(--off-white);
+    margin-block-end: 1rem;
+    transition: color 0.2s ease-out;
+}
+
+.aside-new-articles a:hover {
+    color: var(--soft-orange);
+}
+
+.new-article {
+    padding-block: 2rem;
+}
+
+.new-article-txt {
+    line-height: 1.8;
+}
+
+.new-article:not(.new-article:last-child) {
+    border-block-end: 1px solid var(--dark-grayish-blue);
+}
+
+.new-article:last-child {
+    padding-block-end: 0;
+}
+
+.bottom-top-articles img {
+    max-inline-size: 100px;
+    height: auto;
+    object-fit: cover;
+}
+
+.top-article {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 350px;
+    gap: 1.5rem;
+}
+
+.top-article-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 1.6;
+}
+
+.top-article-rank {
+    font-family: "inter-bold", sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--grayish-blue);
+}
+
+.top-article a {
+    color: var(--very-dark-blue);
+    transition: color 0.2s ease-out;
+}
+.top-article a:hover {
+    color: var(--soft-red);
+}
+
+@media screen and (width <= 768px) {
     .menu-overlay.active {
         position: absolute;
         inset: 0;
@@ -193,6 +309,44 @@ svg.btn-close {
 @media screen and (width < 1024px) {
     .navbar {
         padding-inline: 1rem;
+    }
+}
+
+@media screen and (width >= 1024px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 18.75rem 13.125rem; /* 300px 210px*/
+        gap: 2rem;
+    }
+
+    .featured-article {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+    }
+
+    .featured-article-txt {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .featured-article-txt p {
+        line-height: 1.6;
+    }
+
+    .aside-new-articles {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+    }
+
+    .bottom-top-articles {
+        grid-column: 1 / 4;
+        grid-row: 3 / 4;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
     }
 }
 
