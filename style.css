@@ -305,11 +305,16 @@ svg.btn-close {
 
 @media screen and (width <= 768px) {
     /* Menu mobile */
+    .menu-overlay {
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+    }
     .menu-overlay.active {
         position: absolute;
         inset: 0;
         z-index: 100;
-        background-color: rgba(0 0 0 / 0.5);
+        background-color: rgba(0 0 0);
+        opacity: 0.5;
     }
     .btn-menu,
     .btn-close {
