@@ -14,13 +14,11 @@ function handleBtnClick() {
     openMenu = !openMenu;
 
     if (openMenu) {
-        btnOpen.style.display = "none";
         btnClose.style.display = "block";
         menu.classList.add('active');
         overlay.classList.add('active');
     } else {
         btnClose.style.display = "none";
-        btnOpen.style.display = "block";
         menu.classList.remove('active');
         overlay.classList.remove('active');
     }
