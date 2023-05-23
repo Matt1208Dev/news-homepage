@@ -14,11 +14,11 @@ function handleBtnClick() {
     openMenu = !openMenu;
 
     if (openMenu) {
-        btnClose.style.display = "block";
+        // btnClose.style.display = "block";
         menu.classList.add('active');
         overlay.classList.add('active');
     } else {
-        btnClose.style.display = "none";
+        // btnClose.style.display = "none";
         menu.classList.remove('active');
         overlay.classList.remove('active');
     }
